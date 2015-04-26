@@ -10,7 +10,7 @@ Usage: beta_script.py <pathtodir> <referenceFile> <noiseFile> <output_root_direc
 Example Run (On Test Server, Sample is available at /mnt/alderaan/mlteam3/A1):
 python beta_script.py ../data/sample/ ref_pink.wav super_market_mall2.wav ~/output/
 
-Sample Output: 
+Sample Output (Before dividing by 65536.0): 
 Current File:  SA2_632.wav
 6.0
 9.9
@@ -38,4 +38,35 @@ MFCC Shape:
  [ 19.18471866  -2.01026595  -9.93172322 ..., -27.09888399  -0.2349532
   -10.09651341]]
 Operations Finished!
+===============================================================================
+Sample Output (After dividing by 65536.0): 
+mlteam3@pcschlichter4:~/A1$ python beta_script.py ../data/sample/ ref_pink.wav super_market_mall2.wav ~/output/
+Current File:  SA2_632.wav
+6.0
+9.9
+6.0
+SNR_ratio: 3
+loudness of speech: -31.262838506
+loudness of noise: -24.2493999642
+gain: 10.0134385417
+loudness of adjusted speech: -21.2487508768
+check SNR: 3.00064908746
+Final output file path: /mnt/alderaan/mlteam3/output/sample/convoluted/SA2_632.wav
+MFCC Shape:
+(262, 13)
+[[ 19.59508939   2.70186776  -9.23936962 ..., -34.90854563  -6.3798238
+   -6.01107859]
+ [ 19.55317435   1.11851098  -9.86874784 ..., -27.75712167   1.04552466
+   -1.52660555]
+ [ 19.57381244   3.3010208   -8.2860773  ..., -25.3561603    8.64244945
+    0.60929827]
+ ...,
+ [ 19.22814775   4.87784517  -6.85796621 ..., -27.2970513   -6.59483469
+  -13.7599967 ]
+ [ 19.16051337   7.38684259  -7.06352436 ..., -19.57186845  -0.52468905
+   -9.31084754]
+ [ 18.98050344   7.67656769  -6.82664631 ..., -22.64922645  -7.03116873
+  -13.19350393]]
+Operations Finished!
+
 

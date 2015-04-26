@@ -103,8 +103,9 @@ def audioeval(speechFile, referenceFile,noiseFile, root_dir_name, output_root_di
 
 	# peak-normalize it to 0dB (=1) by dividing the IR vector through its maximum value.
 	(rate_IR, data_IR) = wav.read("htc_desk.wav")
+	
 	# data_IR.dtype is int16, change it into float64
-	data_IR = data_IR.astype(numpy.float64) 
+	data_IR = data_IR.astype(numpy.float64)/65536.0 
 	data_IR = data_IR / data_IR.max()
 
 	# convolve speech with the normalized IR
