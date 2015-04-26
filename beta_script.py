@@ -148,7 +148,7 @@ for root, dirs, files in os.walk(pathtodir):
     for file in files:
         if (file.lower().endswith('.wav')):
            print 'Current File: ', file
-           speechFilePath = root+str(file) 
+           speechFilePath = os.path.join(root,str(file)) 
            tmp = os.path.dirname(speechFilePath)
            #print "Root: "+str(os.path.basename(tmp))
            #print os.path.basename(speechFilePath)
