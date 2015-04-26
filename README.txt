@@ -69,4 +69,32 @@ MFCC Shape:
   -13.19350393]]
 Operations Finished!
 
+3. gamma_script.py - Generates the Convoluted speech files in a given "output" directory, with customized command line parameters.
 
+Usage: gamma_script.py <speaker_speech_dir> <reference_file> <noise_file_dir> <ir_noise_file_dir> <output_root_directory>
+
+Command line arguments:
+<speaker_speech_dir>: Root directory where all the VAD speaker speech data is located
+<reference_file>: Reference File for the Calculation of Replay gain, named as "ref_pink.wav"
+<noise_file_dir>: Root directory where all the noise data is located
+<ir_noise_file_dir> : Root directory where all the impulse response noise samples is located
+<output_root_directory>: Root directory for storing all the output files in same directory hierarchy as the input speech directory
+
+
+Sample Run and Output:
+
+mlteam3@pcschlichter4:~/A1$ python gamma_script.py ../data/sample ref_pink.wav ../data/noise_sample/ /mnt/tatooine/data/impulse_responses/16kHz/wavs16b ../newout1
+Noise File Path: ../data/noise_sample/super_market_mall2.wav
+IR-Noise File Path: /mnt/tatooine/data/impulse_responses/16kHz/wavs16b/s1_desk.wav
+Final output file path: ../newout1/sample/SA2_632.wav
+Operations Finished!
+mlteam3@pcschlichter4:~/A1$ python gamma_script.py ../data/sample ref_pink.wav ../data/noise_sample/ /mnt/tatooine/data/impulse_responses/16kHz/wavs16b ../newout1
+Noise File Path: ../data/noise_sample/super_market_mall2.wav
+IR-Noise File Path: /mnt/tatooine/data/impulse_responses/16kHz/wavs16b/s3_desk.wav
+Final output file path: ../newout1/sample/SA2_632.wav
+Operations Finished!
+mlteam3@pcschlichter4:~/A1$ python gamma_script.py ../data/sample ref_pink.wav ../data/noise_sample/ /mnt/tatooine/data/impulse_responses/16kHz/wavs16b ../newout1
+Noise File Path: ../data/noise_sample/super_market_mall2_copy.wav
+IR-Noise File Path: /mnt/tatooine/data/impulse_responses/16kHz/wavs16b/lg_leather_bag.wav
+Final output file path: ../newout1/sample/SA2_632.wav
+Operations Finished!
