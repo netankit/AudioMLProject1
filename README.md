@@ -1,7 +1,17 @@
-## A1.py 
+## Audio Based Machine Learning in Python: Assignment 1
+
+_Goals_
+* Mix speech corpora with noise sounds; fold with impulse responses
+* Extract MFCC features
+* Voice Activity Detection using out-of-the-box classifiers (Random Forests, SVM, Neural Networks etc.) with cross validation
+* Present your results
+
+_Details and constraints_
+In this first, introductory assignment you will create a dataset that simulates speech in every-day scenarios. You will train a classifier on this dataset for distinguishing voiced from non-voiced sections, a task called voice activity detection, VAD for short. This, of course, requires a ground truth in terms of VAD annotations.
+### A1.py 
 Generation of Convoluted Speech File for a single input speech file.
 
-## beta_script.py
+### beta_script.py
 Generates the Convoluted speech files in a given "output" directory, with customized command line parameters.
 
 ```
@@ -73,7 +83,7 @@ MFCC Shape:
 Operations Finished!
 ```
 
-## gamma_script.py
+### gamma_script.py
 
 Generates the Convoluted speech files in a given "output" directory, with customized command line parameters.
 ```
