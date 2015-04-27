@@ -96,9 +96,7 @@ Command line arguments:
 <reference_file>: Reference File for the Calculation of Replay gain, named as "ref_pink.wav"
 <noise_file_dir>: Root directory where all the noise data is located
 <ir_noise_file_dir> : Root directory where all the impulse response noise samples is located
-<output_root_directory>: Root directory for storing all the output files in same directory 
-
-hierarchy as the input speech directory
+<output_root_directory>: Root directory for storing all the output files in same directory hierarchy as the input speech directory
 ```
 
 Sample Run and Output:
