@@ -68,7 +68,7 @@ def audioeval(speechFile, referenceFile,noiseFile, root_dir_name, output_root_di
 	# Using pydub API to calculate the length of normalized speech file and the noise file
 	speech_normalized = pydub.AudioSegment.from_wav(normalizedFile)
 	
-	# !there is a bug of this function: can NOT open some noise files
+	#We have converted all the noise files to 16 bit int format and then passed the directoyr location to randomly choose noise files, which is different for each speech file.
 	noise = pydub.AudioSegment.from_wav(noiseFile)
 	speech_normalized_length = speech_normalized.duration_seconds
 	noise_length = noise.duration_seconds
