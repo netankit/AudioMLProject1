@@ -122,3 +122,34 @@ IR-Noise File Path: /mnt/tatooine/data/impulse_responses/16kHz/wavs16b/lg_leathe
 Final output file path: ../newout1/sample/SA2_632.wav
 Operations Finished!
 ```
+
+###svm_modelling.py
+
+This script, employs scikit learn's lib linear version of support vector machine and computes cross validation accuracy scores.
+
+```
+Usage: python svm_modelling.py <speech_vector_file> <class_label_file>
+```
+_CROSS Validation: 3_
+```
+mlteam3@pcschlichter4:~/A1$ python svm_modelling.py mfcc_full_vector.dat class_label_full_vector.dat
+(2202458, 13)
+(2202458, 1)
+Starting Cross Validation
+Final Accuracy Score: 0.93 (+/- 0.00)
+Total execution time in minutes :: >>
+1.27803570032
+Task is Finished!
+```
+
+_CROSS Validation: 10_
+```
+mlteam3@pcschlichter4:~/A1$ python svm_modelling.py mfcc_full_vector.dat class_label_full_vector.dat
+(2202458, 13)
+(2202458, 1)
+Starting Cross Validation
+Final Accuracy Score: 0.93 (+/- 0.00)
+Total execution time in minutes :: >>
+7.22843818267
+Task is Finished!
+```
