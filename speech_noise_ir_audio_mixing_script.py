@@ -11,7 +11,7 @@ import os
 import sys
 
 if len(sys.argv)!=6:
-    print '\nUsage: gamma_script.py <speaker_speech_dir> <reference_file> <noise_file_dir> <ir_noise_file_dir> <output_root_directory>'
+    print '\nUsage: python speech_noise_ir_audio_mixing_script.py <speaker_speech_dir> <reference_file> <noise_file_dir> <ir_noise_file_dir> <output_root_directory>'
     print '\nCommand line arguments:'
     print '<speaker_speech_dir>: Root directory where all the VAD speaker speech data is located'
     print '<reference_file>: Reference File for the Calculation of Replay gain, named as "ref_pink.wav" '

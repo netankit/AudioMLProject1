@@ -22,7 +22,7 @@ Usage: python format_convertor.py
 
 Generates the Convoluted speech files in a given "output" directory, with customized command line parameters.
 ```
-Usage: speech_noise_ir_audio_mixing_script.py <speaker_speech_dir> <reference_file> <noise_file_dir> <ir_noise_file_dir> <output_root_directory>
+Usage: python speech_noise_ir_audio_mixing_script.py <speaker_speech_dir> <reference_file> <noise_file_dir> <ir_noise_file_dir> <output_root_directory>
 
 Command line arguments:
 <speaker_speech_dir>: Root directory where all the VAD speaker speech data is located
@@ -47,7 +47,7 @@ Operations Finished!
 Generates the input and target label dataset from the given noise mixed speech files and corresponding annotation files. Stores them in scipy.sparse.coo_matrix representation and saves the resultant dataset vectors onto disk. 
 
 ```
-Usage: input_and_target_dataset_generator.py <annotations_dir> <noise_mix_speech_dir> <mfcc_vector_output_file> <class_label_vector_output_file>
+Usage: python input_and_target_dataset_generator.py <annotations_dir> <noise_mix_speech_dir> <mfcc_vector_output_file> <class_label_vector_output_file>
 
 ```
 

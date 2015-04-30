@@ -8,7 +8,7 @@ import cPickle
 import scipy.sparse
 
 if len(sys.argv)!=5:
-    print '\nUsage: FrameLevelAnnotation.py <annotations_dir> <noise_mix_speech_dir> <mfcc_vector_output_file> <class_label_vector_output_file>'
+    print '\nUsage: python input_and_target_dataset_generator.py <annotations_dir> <noise_mix_speech_dir> <mfcc_vector_output_file> <class_label_vector_output_file>'
     sys.exit()
 
 annotation_dir = sys.argv[1]
