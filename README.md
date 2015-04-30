@@ -148,8 +148,9 @@ mlteam3@pcschlichter4:~/A1$ python svm_modelling.py mfcc_full_vector.dat class_l
 (2202458, 13)
 (2202458, 1)
 Starting Cross Validation
-Final Accuracy Score: 0.93 (+/- 0.00)
+Final Accuracy Score: 0.93413 (+/- 0.00)
 Total execution time in minutes :: >>
-7.22843818267
+5.50397278468
 Task is Finished!
+
 ```
