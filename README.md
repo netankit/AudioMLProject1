@@ -88,6 +88,43 @@ Total execution time in minutes :: >>
 Task is Finished!
 
 ```
+### classification_report.py
+
+Generates classification report for the given model. [STILL TO Investigate/ FEW BUGS]
+```
+Usage: python classification_report.py <speech_vector_file> <class_label_file>
+```
+
+Sample Run:
+
+```
+mlteam3@pcschlichter4:~/A1$ python classification_report.py mfcc_full_vector.dat class_label_full_vector.dat
+(2202458, 13)
+(2202458, 1)
+Starting Cross Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:958: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+Classification report for classifier LinearSVC(C=1.0, class_weight=None, dual=True, fit_intercept=True,
+     intercept_scaling=1, loss='squared_hinge', max_iter=1000,
+     multi_class='ovr', penalty='l2', random_state=None, tol=0.0001,
+     verbose=0):
+                    precision    recall  f1-score   support
+
+No Speech Detected       0.00      0.00      0.00     60627
+   Speech Detected       0.94      1.00      0.97   1040602
+
+       avg / total       0.89      0.94      0.92   1101229
+
+
+Confusion matrix:
+[[      0   60627]
+ [      0 1040602]]
+Total execution time in minutes :: >>
+0.405680398146
+Task is Finished!
+
+```
+
 ### Accuracy Scores
 
 Support Vector Machines (10 Fold Cross Validation):  0.93413
