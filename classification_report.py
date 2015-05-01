@@ -7,6 +7,7 @@ import time
 import sys
 import cPickle as pickle
 import scipy.sparse
+from itertools import groupby
 
 
 if len(sys.argv)!=3:
@@ -30,8 +31,8 @@ with open(class_label_file, 'rb') as infile2:
 TargetClassLabelTemp = preprocessing.normalize(TargetData,norm='l2')
 infile2.close()
 
-print InputDataSpeech.shape
-print TargetClassLabelTemp.shape
+#print InputDataSpeech.shape
+#print TargetClassLabelTemp.shape
 
 TargetClassLabel = np.array(scipy.sparse.coo_matrix((TargetClassLabelTemp),dtype=np.int16).toarray()).tolist()
 TargetClassLabel1 = map(str, TargetClassLabel)
@@ -51,12 +52,15 @@ n_samples = len(TargetClassLabel)
 InputDataSpeechTemp = scipy.sparse.coo_matrix((InputDataSpeech),dtype=np.float64).toarray()
 first_half_input_vector = InputDataSpeechTemp[:n_samples/2,:13]
 second_half_input_vector = InputDataSpeechTemp[n_samples/2:,:13]
+#print "Predicted: "+str(second_half_input_vector.shape)
 
 clf_model.fit(first_half_input_vector, TargetClassLabel[:n_samples / 2])
 
 # Now predict the value of the digit on the second half:
 expected = TargetClassLabel[n_samples / 2:]
 predicted = clf_model.predict(second_half_input_vector)
+#predicted = predicted1.tolist()
+#predicted[0] = 0
 
 target_names = ['No Speech Detected', 'Speech Detected' ]
 
@@ -70,3 +74,9 @@ end = time.time()
 print "Total execution time in minutes :: >>"
 print (end - start)/60
 print 'Task is Finished!'
+
+# print "Expected: "+str([len(list(group)) for key, group in groupby(expected)])
+# print "Predicted: "+str([len(list(group)) for key, group in groupby(predicted)])
+
+#print "Expected: "+str(expected)
+#print "Predicted: "+str(predicted)
