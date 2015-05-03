@@ -131,7 +131,8 @@ Support Vector Machines (10 Fold Cross Validation):  0.93413
 
 ### RandomForestClassifier.py
 
-Rearrange and shuffle the training set according to speech and non-speech frames ratio and using RandomForestClassifier
+Seperate the speech frames and nonspeech frames;
+Rearrange and shuffle the training set according to adjustable speech to non-speech frames ratio and using RandomForestClassifier.
 ```
 Usage: python classification_report.py <speech_vector_file> <class_label_file>
 ```
