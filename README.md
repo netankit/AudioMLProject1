@@ -90,7 +90,7 @@ Task is Finished!
 ```
 ### classification_report.py
 
-Generates classification report for the given model. [STILL TO Investigate/ FEW BUGS]
+Generates classification report for the given model.
 ```
 Usage: python classification_report.py <speech_vector_file> <class_label_file>
 ```
@@ -196,6 +196,71 @@ For LinearSVC:
 
 tuned_parameters = [{'C': [1, 10, 100, 1000],'loss':['hinge' , 'squared_hinge'] }]
 
+```
+Results:
 
 ```
+# Tuning hyper-parameters for precision
 
+Best parameters set found on development set:
+
+{'loss': 'hinge', 'C': 1000}
+
+Grid scores on development set:
+
+0.852 (+/-0.000) for {'loss': 'hinge', 'C': 1}
+0.852 (+/-0.000) for {'loss': 'squared_hinge', 'C': 1}
+0.852 (+/-0.000) for {'loss': 'hinge', 'C': 10}
+0.852 (+/-0.000) for {'loss': 'squared_hinge', 'C': 10}
+0.852 (+/-0.000) for {'loss': 'hinge', 'C': 100}
+0.852 (+/-0.000) for {'loss': 'squared_hinge', 'C': 100}
+0.858 (+/-0.021) for {'loss': 'hinge', 'C': 1000}
+0.854 (+/-0.007) for {'loss': 'squared_hinge', 'C': 1000}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00     60627
+          1       0.94      1.00      0.97   1040602
+
+avg / total       0.89      0.94      0.92   1101229
+
+
+# Tuning hyper-parameters for recall
+
+Best parameters set found on development set:
+
+{'loss': 'hinge', 'C': 1}
+
+Grid scores on development set:
+
+0.923 (+/-0.000) for {'loss': 'hinge', 'C': 1}
+0.923 (+/-0.000) for {'loss': 'squared_hinge', 'C': 1}
+0.923 (+/-0.000) for {'loss': 'hinge', 'C': 10}
+0.923 (+/-0.000) for {'loss': 'squared_hinge', 'C': 10}
+0.923 (+/-0.000) for {'loss': 'hinge', 'C': 100}
+0.923 (+/-0.000) for {'loss': 'squared_hinge', 'C': 100}
+0.923 (+/-0.000) for {'loss': 'hinge', 'C': 1000}
+0.763 (+/-0.640) for {'loss': 'squared_hinge', 'C': 1000}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00     60627
+          1       0.94      1.00      0.97   1040602
+
+avg / total       0.89      0.94      0.92   1101229
+
+
+Total execution time in minutes :: >>
+174.473954884
+Task is Finished!
+```
