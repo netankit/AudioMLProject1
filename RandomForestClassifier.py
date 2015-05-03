@@ -16,7 +16,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 #We have chosen l2 normalization to normalize the mfcc speech vector over the entire set of frames.
 #Training Data -- Speech Vector File 
-with open('class_label_weighted_vector_39D.dat', 'rb') as infile1:
+with open('mfcc_weighted_vector_39D.dat', 'rb') as infile1:
    InputData = pickle.load(infile1)
 InputDataSpeech = preprocessing.normalize(InputData,norm='l2')
 infile1.close()
@@ -30,10 +30,10 @@ infile2.close()
 TargetClassLabel = np.array(scipy.sparse.coo_matrix((TargetClassLabelTemp),dtype=np.int16).toarray()).tolist()
 TargetClassLabel1 = map(str, TargetClassLabel)
 TargetClassLabel = results = [int(i.strip('[').strip(']')) for i in TargetClassLabel1]
-
+#TargetClassLabel = TargetClassLabel[:200000]
 n_samples = len(TargetClassLabel)
 InputDataSpeechTemp = scipy.sparse.coo_matrix((InputDataSpeech),dtype=np.float64).toarray()
-
+#InputDataSpeechTemp = InputDataSpeechTemp[:200000]
 # merging the label and mfcc feature
 data_zipped = zip(TargetClassLabel, InputDataSpeechTemp)
 
@@ -47,19 +47,18 @@ ones = [data_zipped[i] for i in ones_index]
 zeros = [data_zipped[i] for i in zeros_index]
 num_zero = len(zeros)
 original_ratio = float(len(ones))/num_zero
-# number of zeros:  145082
-# number of ones:  2057376
+# whole number of zeros:  145082
+# whole number of ones:  2057376
 
-one_zero_ratio = 4
-train_test_ratio = 10
+one_zero_ratio = 1
+train_test_ratio = 30 
 
-# reconstructe test set
-print 'The ratio of ones to zeros on test: ', one_zero_ratio
+# reconstructe test set according to original_ratio
 test_zero = zeros[:int(num_zero/train_test_ratio)]
 print 'test of zeros:	', len(test_zero)
 test_one = ones[:int(len(test_zero)*original_ratio)]
+#test_one = ones[:int(len(test_zero)*1)]
 print 'test of ones:	', len(test_one)
-print ''
 test = test_zero + test_one
 np.random.shuffle(test)
 print 'test:	', len(test)
@@ -70,11 +69,11 @@ for i in test:
 for i in test:
 	test_feature.append(i[1])
 
-# reconstructe training set
+# reconstructe training set according to one_zero_ratio
 # the ratio of ones to zeros on training is 1
 train_zero = zeros[len(test_zero)+1:]
 print 'train_zero:	', len(train_zero)
-train_one = ones[len(test_one)+1:int(len(train_zero)*one_zero_ratio)]
+train_one = ones[len(test_one)+1:len(test_one)+1+int(len(train_zero)*one_zero_ratio)]
 print 'train_one	', len(train_one)
 train = train_zero + train_one
 np.random.shuffle(train)
