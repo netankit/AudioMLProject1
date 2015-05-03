@@ -128,3 +128,45 @@ Task is Finished!
 ### Accuracy Scores
 
 Support Vector Machines (10 Fold Cross Validation):  0.93413
+
+### RandomForestClassifier.py
+
+Rearrange and shuffle the training set according to speech and non-speech frames ratio and using RandomForestClassifier
+```
+Usage: python classification_report.py <speech_vector_file> <class_label_file>
+```
+
+Sample Run:
+
+```
+mlteam3@pcschlichter4:~/A1$ python RandomForestClassifier.py
+test of zeros:  4836
+test of ones:   68578
+test:   73414
+train_zero:     140245
+train_one       140245
+train:  280490
+Classification report for classifier RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=100, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False):
+             precision    recall  f1-score   support
+
+          0       0.07      0.99      0.12      4836
+          1       0.96      0.02      0.04     68578
+
+avg / total       0.90      0.08      0.04     73414
+
+
+Confusion matrix, without normalization
+[[ 4779    57]
+ [67331  1247]]
+Normalized confusion matrix
+[[ 0.9882134   0.0117866 ]
+ [ 0.98181633  0.01818367]]
+Task is Finished!
+
+
+```
