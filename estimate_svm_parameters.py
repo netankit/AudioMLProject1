@@ -19,7 +19,7 @@ from itertools import groupby
 
 
 if len(sys.argv)!=3:
-    print '\nUsage: python classification_report.py <speech_vector_file> <class_label_file>'
+    print '\nUsage: python estimate_svm_parameters.py <speech_vector_file> <class_label_file>'
     sys.exit()
 
 speech_vector_file = sys.argv[1]

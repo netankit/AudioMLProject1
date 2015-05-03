@@ -171,3 +171,31 @@ Task is Finished!
 
 
 ```
+### estimate_svm_paramters.py and  estimate_liblinear_svm_parameters.py
+
+This script(s) determines the best paramters for SVM and LinearSVC(LibLinear SVM implementation) using Grid search cross validation over five folds. 
+
+```
+Usage: python estimate_svm_parameters.py <speech_vector_file> <class_label_file>
+
+Usage: estimate_liblinear_svm_parameters.py <speech_vector_file> <class_label_file>
+
+```
+
+
+The following parameters were experimented on, to find the most suitable configuration:
+
+```
+For SVM:
+tuned_parameters = [{'kernel': ['rbf'], 'gamma': [1e-3, 1e-4],
+                     'C': [1, 10, 100, 1000]},
+                    {'kernel': ['linear'], 'C': [1, 10, 100, 1000]},
+                    {{'kernel': ['sigmoid'], 'gamma': [1e-3, 1e-4], 
+                     'C': [1, 10, 100, 1000]}]
+For LinearSVC:
+
+tuned_parameters = [{'C': [1, 10, 100, 1000],'loss':['hinge' , 'squared_hinge'] }]
+
+
+```
+
