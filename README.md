@@ -12,7 +12,7 @@ In this first, introductory assignment you will create a dataset that simulates 
 
 ### format_convertor.py
 
-Converts the format of the noise files into int_16 type. We convert all the noise files into the int_16 format aand save them in a new folder which is used further in the generation of dataset.
+Converts the format of the noise files into int_16 type. We convert all the noise files into the int_16 format and save them in a new folder which is used further in the generation of dataset.
 
 ```
 Usage: python format_convertor.py
